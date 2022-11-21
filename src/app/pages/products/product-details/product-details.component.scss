@@ -1,0 +1,24 @@
+img {
+    height: 360px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    --star-color: #b3b3b3;
+    --star-background: #fc0;
+
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+
+    &::before {
+        content: '★★★★★';
+        // letter-spacing: 3px;
+        background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
